@@ -2,6 +2,8 @@ from student import Student
 from course import Course
 
 class Main:
+    global students
+    students = []
 
     def print_menu():
         print("1. create a student")
@@ -9,9 +11,13 @@ class Main:
         print("q. exit the app")
 
     def print_student_menu():
+        student = Student()
         name = input("Enter student name ")
         last_name = input("Enter student last name ")
-        print(name + last_name)
+        students.append(student.create_student(name, last_name))#remove and recreate in student class and the same things with course class
+        # student.create_student(name, last_name)
+        # student.show_students_list()
+        print(students)
     
     def print_course_menu():
         course_name = input("Enter course name")
@@ -29,8 +35,6 @@ class Main:
             break
         else:
             print("Not a valid option")
-
-    
     # student = Student()
 
     # student.test()
